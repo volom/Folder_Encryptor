@@ -1,5 +1,5 @@
 # Folder_Encryptor
-This tool helps you to encrypt and to decrypt files using given password. It's useful for security purposes and to prevent unauthorized use of personal files
+This tool helps you to encrypt and to decrypt files using given password. It's useful for security purposes and to prevent unauthorized usage of personal files
 
 The main files of the project:
 
