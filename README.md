@@ -1,11 +1,11 @@
 # Folder_Encryptor
-This tool helps you to encrypt and to decrypt files using a password. Useful for security purposes and to prevent unauthorized use of personal files
+This tool helps you to encrypt and to decrypt files using given password. Useful for security purposes and to prevent unauthorized use of personal files
 
 The main files of the project:
 
-encryptor.py - encrypyts files with given password
+encryptor.py - encrypts files with given password
 
-decryptor.py - decrypyts files with given password
+decryptor.py - decrypts files with given password
 represent directories and subdirectories with files that have been encrypted
 
 Example_original and Example_encrypted represent directories and subdirectories with files 
