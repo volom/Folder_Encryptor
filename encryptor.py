@@ -66,7 +66,7 @@ for file in list_files:
         with open (file, 'wb') as encrypted_file:
             encrypted_file.write(encrypted)
     except Exception as e:
-        print(f"The file {file} has not been encrypted. The problem occured:\n{e}")
+        print(f"The file {file} has not been encrypted. The problem occurred:\n{e}")
         pass
         
 print(f"The encryption was done successfuly. Save your password to decrypt - |{init_key}|")
