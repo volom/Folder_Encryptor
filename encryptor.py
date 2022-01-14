@@ -10,6 +10,8 @@ from cryptography.fernet import Fernet
 import base64
 import os
 
+clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
 while True:
     folder_path = input("Enter path to folder where you want to encrypt files ")
     print("Is it the right directory you have chosen?")
@@ -20,16 +22,21 @@ while True:
         break
     else:
         continue
+    
+clearConsole()
 
 while True:
     try:
         while True:
             print("Password must contain special characters, only Latin, no spaces")
             init_key = input("Set password to encrypt files ---> ")
+            clearConsole()
             check_password = input("Enter password again to check ---> ")
             if init_key == check_password:
+                clearConsole()
                 break
             else:
+                clearConsole()
                 print("Check failed!")
                 continue
             
@@ -52,11 +59,15 @@ for (dirpath, dirnames, filenames) in os.walk(folder_path):
     list_files += [os.path.join(dirpath, file) for file in filenames]
 
 for file in list_files:
-    with open(file, 'rb') as original_file:
-        original = original_file.read()
-        encrypted = f.encrypt(original)
-    with open (file, 'wb') as encrypted_file:
-        encrypted_file.write(encrypted)
+    try:
+        with open(file, 'rb') as original_file:
+            original = original_file.read()
+            encrypted = f.encrypt(original)
+        with open (file, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted)
+    except Exception as e:
+        print(f"The file {file} has not been encrypted. The problem occured:\n{e}")
+        pass
         
 print(f"The encryption was done successfuly. Save your password to decrypt - |{init_key}|")
 
